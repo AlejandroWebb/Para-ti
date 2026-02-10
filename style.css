@@ -1138,7 +1138,44 @@ body {
     transform: rotate(15deg) rotateY(-180deg) scale(0);
   }
 }
+/* --- CÓDIGO NUEVO AÑADIDO --- */
 
+/* 1. Estilos para el Texto "PARA TI" */
+.title {
+  position: absolute;
+  top: 15%; /* Ajusta la altura */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  color: #fff;
+  font-family: 'Brush Script MT', cursive; /* Fuente elegante */
+  font-size: 5rem;
+  font-weight: bold;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 100, 100, 0.5);
+  opacity: 0;
+  animation: fadeInText 4s ease-in forwards;
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* 2. Estilos para convertir las flores amarillas en BLANCAS */
+.flower--white .flower__leaf {
+  background-color: #ffffff !important;
+  background-image: linear-gradient(to top, #ffffff, #f0f0f0) !important;
+  box-shadow: inset 0 0 2vmin rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Cambiamos el centro de la flor blanca a amarillo para que resalte */
+.flower--white .flower__white-circle {
+  background-color: #ffdb00 !important; 
+}
+.flower--white .flower__white-circle::after {
+  background-image: none !important;
+  background-color: #ffdb00 !important;
+}
 .long-g {
   position: absolute;
   bottom: 25vmin;
